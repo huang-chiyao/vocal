@@ -3,41 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Video</title>
+    <title>VOCAL</title>
     <style>
         body {
-            background-color: #000; /* Black background */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
         }
-        .video-wrapper {
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .authors {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .btn {
+            display: inline-block;
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 5px;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #555;
+        }
+        .section {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        /* Video Container for Responsive 16:9 */
+        .video-container {
             position: relative;
-            width: 100%;
-            height: 100%;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #000;
         }
-        iframe {
+        .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border: none;
+        }
+        /* Poster Image */
+        .poster-img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            border: 1px solid #ddd;
         }
     </style>
 </head>
 <body>
 
-    <div class="video-wrapper">
-        <iframe 
-            src="https://youtu.be/s8SvL5vpdTk" 
-            title="VOCAL_WACV_2026" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
+    <header>
+        <h1>Your Project Title Goes Here</h1>
+        <div class="authors">
+            Your Name, Co-Author Name, Advisor Name
+        </div>
+        
+        <div class="buttons">
+            <a href="YOUR_PDF_LINK" class="btn">Paper</a>
+            <a href="https://github.com/YOUR_USERNAME/YOUR_REPO" class="btn">Code</a>
+            <a href="#" class="btn">Data</a>
+        </div>
+    </header>
+
+    <div class="section">
+        <h2>Demo</h2>
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID&controls=1" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <p style="text-align:center; font-size:0.9em; color:#666;">
+            *Video plays automatically (muted). Click to unmute.*
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Abstract</h2>
+        <p>
+            This is where you write your abstract. Describe the problem you are solving, 
+            your proposed method, and your key results. Keep it concise and clear.
+            The layout is optimized for readability.
+        </p>
+        <p>
+            You can add a second paragraph here if needed to describe the technical
+            details or the impact of the work.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Method / Poster</h2>
+        <img src="poster.png" alt="Project Poster or Architecture Diagram" class="poster-img">
+        <p class="caption">
+            Figure 1: An overview of our proposed architecture.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Citation</h2>
+        <pre style="background:#eee; padding:15px; overflow-x:auto; border-radius:5px;">
+@article{YourName2024,
+  title={Your Project Title},
+  author={Lastname, Firstname},
+  journal={Journal Name},
+  year={2024}
+}</pre>
     </div>
 
 </body>
