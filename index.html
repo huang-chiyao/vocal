@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOCAL</title>
+    <title>VOCAL: Visual Odometry via ContrAstive Learning</title>
     <style>
         body {
             font-family: "Helvetica Neue", Arial, sans-serif;
@@ -16,14 +16,28 @@
         }
         h1 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 10px;
+            font-weight: bold;
         }
         .authors {
             text-align: center;
             font-size: 1.2rem;
+            color: #0066cc;
+            margin-bottom: 5px;
+        }
+        .affiliations {
+            text-align: center;
+            font-size: 1rem;
             color: #555;
             margin-bottom: 20px;
+            font-style: italic;
+        }
+        .venue {
+            text-align: center;
+            font-weight: bold;
+            color: #cc0000;
+            margin-bottom: 30px;
         }
         .buttons {
             text-align: center;
@@ -33,14 +47,18 @@
             display: inline-block;
             background: #333;
             color: #fff;
-            padding: 10px 20px;
+            padding: 10px 25px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 30px;
             margin: 0 5px;
             font-weight: bold;
+            transition: background 0.3s;
         }
         .btn:hover {
             background: #555;
+        }
+        .btn-icon {
+            margin-right: 5px;
         }
         .section {
             background: #fff;
@@ -52,8 +70,9 @@
         h2 {
             border-bottom: 2px solid #eee;
             padding-bottom: 10px;
+            margin-top: 0;
         }
-        /* Video Container for Responsive 16:9 */
+        /* Video Container */
         .video-container {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 ratio */
@@ -61,6 +80,7 @@
             overflow: hidden;
             border-radius: 8px;
             background: #000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
         .video-container iframe {
             position: absolute;
@@ -69,10 +89,22 @@
             width: 100%;
             height: 100%;
         }
-        /* Poster Image */
+        /* Images */
         .poster-img {
             width: 100%;
             height: auto;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            overflow-x: auto;
             border-radius: 5px;
             border: 1px solid #ddd;
         }
@@ -81,63 +113,67 @@
 <body>
 
     <header>
-        <h1>Your Project Title Goes Here</h1>
-        <div class="authors">
-            Your Name, Co-Author Name, Advisor Name
-        </div>
+        <h1>VOCAL: Visual Odometry via ContrAstive Learning</h1>
         
+        <div class="authors">
+            <a href="https://github.com/huang-chiyao" style="text-decoration:none; color:#0066cc;">Chi-Yao Huang</a>, 
+            Zeel Bhatt, 
+            Yezhou Yang
+        </div>
+
+        <div class="venue">
+            Accepted to WACV 2026
+        </div>
+
         <div class="buttons">
-            <a href="YOUR_PDF_LINK" class="btn">Paper</a>
-            <a href="https://github.com/YOUR_USERNAME/YOUR_REPO" class="btn">Code</a>
-            <a href="#" class="btn">Data</a>
+            <a href="https://arxiv.org/abs/2507.00243" class="btn">📄 Paper</a>
+            <a href="https://arxiv.org/pdf/2507.00243" class="btn">⬇️ PDF</a>
+            <a href="https://github.com/huang-chiyao/vocal" class="btn">💻 Code</a>
         </div>
     </header>
 
     <div class="section">
-        <h2>Demo</h2>
+        <h2>Demo Video</h2>
         <div class="video-container">
             <iframe 
-                src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID&controls=1" 
-                title="YouTube video player" 
+                src="https://www.youtube.com/embed/Y1eGmtXD9uc?autoplay=1&mute=1&loop=1&playlist=Y1eGmtXD9uc&controls=1" 
+                title="VOCAL Demo" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
             </iframe>
         </div>
-        <p style="text-align:center; font-size:0.9em; color:#666;">
-            *Video plays automatically (muted). Click to unmute.*
+        <p style="text-align:center; font-size:0.9em; color:#666; margin-top:10px;">
+            *Video plays automatically (muted). Click the speaker icon to unmute.*
         </p>
     </div>
 
     <div class="section">
         <h2>Abstract</h2>
         <p>
-            This is where you write your abstract. Describe the problem you are solving, 
-            your proposed method, and your key results. Keep it concise and clear.
-            The layout is optimized for readability.
+            Breakthroughs in visual odometry (VO) have fundamentally reshaped the landscape of robotics, enabling ultra-precise camera state estimation that is crucial for modern autonomous systems. Despite these advances, many learning-based VO techniques rely on rigid geometric assumptions, which often fall short in interpretability and lack a solid theoretical basis within fully data-driven frameworks.
         </p>
         <p>
-            You can add a second paragraph here if needed to describe the technical
-            details or the impact of the work.
+            To overcome these limitations, we introduce <strong>VOCAL (Visual Odometry via ContrAstive Learning)</strong>, a novel framework that reimagines VO as a label ranking challenge. By integrating Bayesian inference with a representation learning framework, VOCAL organizes visual features to mirror camera states. The ranking mechanism compels similar camera states to converge into consistent and spatially coherent representations within the latent space. This strategic alignment not only bolsters the interpretability of the learned features but also ensures compatibility with multimodal data sources. Extensive evaluations on the KITTI dataset highlight VOCAL's enhanced interpretability and flexibility, pushing VO toward more general and explainable spatial intelligence.
         </p>
     </div>
 
     <div class="section">
-        <h2>Method / Poster</h2>
-        <img src="poster.png" alt="Project Poster or Architecture Diagram" class="poster-img">
-        <p class="caption">
-            Figure 1: An overview of our proposed architecture.
+        <h2>Method Overview</h2>
+        <img src="poster.png" alt="VOCAL Framework Overview" class="poster-img">
+        <p style="color:#666; font-size: 0.9em; margin-top:10px;">
+            <strong>Figure 1:</strong> The VOCAL framework reimagines visual odometry as a label ranking challenge, aligning visual features with camera states in a latent space.
         </p>
     </div>
 
     <div class="section">
         <h2>Citation</h2>
-        <pre style="background:#eee; padding:15px; overflow-x:auto; border-radius:5px;">
-@article{YourName2024,
-  title={Your Project Title},
-  author={Lastname, Firstname},
-  journal={Journal Name},
-  year={2024}
+        <pre>
+@article{huang2025vocal,
+  title={VOCAL: Visual Odometry via ContrAstive Learning},
+  author={Huang, Chi-Yao and Bhatt, Zeel and Yang, Yezhou},
+  journal={arXiv preprint arXiv:2507.00243},
+  year={2025}
 }</pre>
     </div>
 
