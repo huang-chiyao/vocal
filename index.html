@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VOCAL: Visual Odometry via ContrAstive Learning</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
     <style>
         body {
             font-family: "Helvetica Neue", Arial, sans-serif;
@@ -36,15 +32,16 @@
             color: #cc0000;
             margin-bottom: 30px;
         }
-        /* UPDATED BUTTON STYLES */
+        /* Buttons Container */
         .buttons {
             text-align: center;
             margin-bottom: 40px;
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
             flex-wrap: wrap;
         }
+        /* Button Style */
         .btn {
             display: flex;
             align-items: center;
@@ -55,16 +52,17 @@
             border-radius: 30px;
             font-weight: bold;
             font-size: 1rem;
-            transition: background 0.3s, transform 0.1s;
+            transition: background 0.3s;
         }
         .btn:hover {
             background: #555;
-            transform: translateY(-2px);
         }
-        /* Icon spacing */
-        .btn i {
+        /* Icon Image Styling */
+        .btn img {
+            height: 20px;
             margin-right: 8px;
-            font-size: 1.2rem;
+            /* This filter turns any black/colored logo into pure white */
+            filter: brightness(0) invert(1);
         }
         .section {
             background: #fff;
@@ -80,7 +78,7 @@
         }
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             border-radius: 8px;
@@ -126,15 +124,18 @@
 
         <div class="buttons">
             <a href="https://huang-chiyao.github.io/vocal/" class="btn">
-                <i class="ai ai-cv"></i> WACV 2026
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Computer_Vision_Foundation_logo_2021.svg" alt="WACV Icon">
+                WACV 2026
             </a>
             
             <a href="https://arxiv.org/pdf/2507.00243" class="btn">
-                <i class="ai ai-arxiv"></i> Paper
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/ArXiv_smile.svg" alt="arXiv Icon">
+                Paper
             </a>
             
             <a href="https://github.com/huang-chiyao/vocal" class="btn">
-                <i class="fab fa-github"></i> Code
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub Icon">
+                Code
             </a>
         </div>
     </header>
